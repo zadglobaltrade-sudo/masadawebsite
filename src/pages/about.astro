@@ -1,0 +1,445 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const heroStats = [
+  { value: 900, suffix: '+', label: 'Certified Farmers', sub: 'Direct contract clusters' },
+  { value: 3500, suffix: ' MT', label: 'Annual Capacity', sub: 'Standardized export grade' },
+  { value: 1500, suffix: '+', label: 'Dispatched Reefers', sub: 'Unbroken cold journey' },
+  { value: 6, suffix: 'hr', label: 'Pulldown Target', sub: '13.5°C core stabilization', prefix: '< ' },
+];
+
+const metrics = [
+  { label: 'Domestic Distribution & Farm-Gate Sourcing', value: 90, note: 'Direct smallholder procurement across the Jalgaon & Solapur agricultural belt' },
+  { label: 'International Export Reach', value: 65, note: 'Scheduled commercial reefer sailings across global maritime trade lanes' },
+  { label: 'Service & Cold-Chain Logistics Expansion', value: 75, note: 'Pre-cooling automation, dataloggers, and packaging technology rollout' },
+];
+
+const advantages = [
+  { n: '01', title: 'Quality Assurance', desc: '39–46mm caliper, 18–22cm finger length, zero peel abrasions — APEDA compliant harvest standards for uniform fruit presentation.', tag: 'Standardized Sizing' },
+  { n: '02', title: 'Trusted Farmer Network', desc: 'Direct contracts with 900+ smallholder growers, farm-level agronomic oversight, and transparent scheduled payout cycles.', tag: 'Direct Smallholders' },
+  { n: '03', title: 'Responsive Support', desc: 'A dedicated Pune commercial desk providing reefer telemetry updates, customs documentation support, and round-the-clock port coordination.', tag: 'Real-Time Desk' },
+  { n: '04', title: 'Cold Chain & Packaging', desc: 'Fast forced-air pulldown to 13.5°C within 6 hours of harvest, with heavy-duty telescopic cartons and Modified Atmosphere Packaging liners.', tag: 'MAP Protection' },
+  { n: '05', title: 'Regulatory Compliance', desc: 'Seamless phytosanitary certification, FSSAI verification, and tamper-evident container seals ensuring unhindered clearance at arrival docks.', tag: 'Phytosanitary' },
+  { n: '06', title: 'Supply Continuity', desc: 'Multi-region cluster harvest schedules ensuring steady weekly container allocations, insulating partners from seasonal volume dips.', tag: '52-Week Program' },
+];
+
+const certifications = [
+  { title: 'APEDA Registered', sub: 'Merchant Exporter' },
+  { title: 'FSSAI Licensed', sub: 'Packing Facility' },
+  { title: 'ISO 22000', sub: 'Certified Operations' },
+  { title: 'Phytosanitary', sub: 'Protocol Verified' },
+];
+---
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Masada — Masada Fruits &amp; Vegetables</title>
+  <meta name="description" content="Masada Fruits and Vegetables is a Pune-based export house shipping premium Cavendish bananas to Oman and Afghanistan under strict cold-chain standards." />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
+</head>
+<body>
+  <Header />
+
+  <main>
+    <!-- PAGE HEADER -->
+    <section class="about-hero">
+      <div class="container about-hero-inner reveal">
+        <div class="breadcrumb label-sm">
+          <a href="/">Home</a>
+          <span class="sep">/</span>
+          <span class="current">About</span>
+        </div>
+        <h1 class="display-lg">About Masada</h1>
+        <p class="body-xl about-hero-sub">
+          A Pune-based export house shipping premium Cavendish bananas from
+          Maharashtra's fertile belt to trusted trade partners in Oman and Afghanistan.
+        </p>
+
+        <div class="hero-stat-bar">
+          {heroStats.map((s) => (
+            <div class="hero-stat">
+              <div class="headline-xl stat-value" data-count={s.value} data-suffix={s.suffix} data-prefix={s.prefix}>0{s.suffix}</div>
+              <p class="label-caps">{s.label}</p>
+              <p class="body-sm">{s.sub}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPANY OVERVIEW -->
+    <section class="overview">
+      <div class="container">
+        <div class="eyebrow-row reveal">
+          <span class="dot"></span>
+          <span class="label-caps eyebrow">Operational Lineage</span>
+        </div>
+
+        <div class="overview-grid reveal">
+          <div>
+            <h2 class="headline-xl">Who We Are</h2>
+            <p class="body-xl">
+              Masada Fruits and Vegetables is a Pune-headquartered export house
+              built around premium Grade-A Cavendish bananas, sourced from
+              Jalgaon and Solapur's growing belts and managed under carefully
+              controlled standards from harvest to dock clearance.
+            </p>
+            <p class="body-md">
+              We work directly with farmer clusters rather than through
+              layers of intermediaries — which means clearer traceability,
+              fair and timely payouts, and faster enforcement of
+              phytosanitary standards before produce ever reaches our packhouse.
+            </p>
+          </div>
+          <div>
+            <h2 class="headline-xl">Our Experience</h2>
+            <p class="body-xl">
+              Masada coordinates thousands of metric tonnes of perishable
+              agricultural freight each season, with one non-negotiable rule:
+              maintain an unbroken cold chain from packhouse pre-cooling to
+              final port discharge.
+            </p>
+            <p class="body-md">
+              Every reefer container is temperature-logged, ethylene-managed,
+              and packed with export-grade materials, so our international
+              partners can count on consistent quality across long ocean transits.
+            </p>
+          </div>
+        </div>
+
+        <div class="overview-photos reveal">
+          <div class="photo-card">
+            <div class="photo-frame">
+              <img
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7C4Te9bx_cQsXtJvcWyz-IHFGIl0Mm_Y9NekxA7W55JLoVvBfudVotGvnJxD7G3MZzz2ZkG1VdQyqiOjfL9FGwPlx7bJ34TXaL2d8rxhZtFvaOpSSvrT13FH0ENuGM3codrDTc7hT7VfV3dm8Gc_BA5R5yn0Qp4AEUfZGe2zx4NRFTz0sPE-ANjQQ8So6klmYWZL4zAJp-nIigp4hLDrLMyWdf62NZZKKGdTDLBniDq7FxZLDT6FZ"
+                alt="Packhouse workers sorting and grading export-quality Cavendish bananas"
+                loading="lazy"
+              />
+            </div>
+            <div class="photo-caption">
+              <div class="label-caps eyebrow">Packhouse Operations</div>
+              <h3 class="headline-sm">Sanitary Washing &amp; Caliper Inspection</h3>
+              <p class="body-sm">Clean-water flumes remove latex immediately post-cut, followed by calibrated caliper testing before packing.</p>
+            </div>
+          </div>
+          <div class="photo-card">
+            <div class="photo-frame">
+              <img
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNVKaVtbbYGWpe0204gL8K41Jyn8XlHtG9LO_oM6wGgDvyTScMWvPg4ZLNILnEX3si9H_K5TpUiBvTDedbDwcRH3NpPFwNPefRXyjBKFv03rGwg36f9w_xcCVAnutOrkYs4LauWD2T0dgFua5hy8LKrI5se2tGqx_djkP3BlDwYViY1sEenF_eKz12_waGZezeqs_NiVkw7_XmaSiJU0jv1T1RcsSCt1zciFTUrsv9gxLJ4-gFoqHp"
+                alt="Refrigerated shipping container docked for cold-chain export"
+                loading="lazy"
+              />
+            </div>
+            <div class="photo-caption">
+              <div class="label-caps eyebrow">Intermodal Logistics</div>
+              <h3 class="headline-sm">Direct Container Reefer Pulldown</h3>
+              <p class="body-sm">Reefers loaded under dock-seal conditions, sealed with tamper-evident seals and tracked in transit.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CAPABILITY METRICS -->
+    <section class="metrics">
+      <div class="container">
+        <div class="metrics-head reveal">
+          <div class="eyebrow-row">
+            <span class="dot"></span>
+            <span class="label-caps eyebrow">Capacity Overview</span>
+          </div>
+          <h2 class="headline-xl">Reach &amp; Capability</h2>
+          <p class="body-md">A snapshot of our domestic sourcing depth, export reach, and cold-chain infrastructure rollout.</p>
+        </div>
+
+        <div class="metrics-card reveal">
+          {metrics.map((m) => (
+            <div class="metric-row">
+              <div class="metric-top">
+                <span class="headline-sm">{m.label}</span>
+                <span class="metric-value label-caps">{m.value}%</span>
+              </div>
+              <div class="metric-track">
+                <div class="metric-fill" data-fill={m.value}></div>
+              </div>
+              <p class="body-sm metric-note">{m.note}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY PARTNERS CHOOSE MASADA -->
+    <section class="advantages">
+      <div class="container">
+        <div class="advantages-head reveal">
+          <div>
+            <div class="eyebrow-row">
+              <span class="dot"></span>
+              <span class="label-caps eyebrow">Institutional Advantage</span>
+            </div>
+            <h2 class="headline-xl">Why Partners Choose Masada</h2>
+          </div>
+          <p class="body-md">Built for international produce importers, supermarket networks, and institutional distributors.</p>
+        </div>
+
+        <div class="advantages-grid reveal">
+          {advantages.map((a) => (
+            <div class="advantage-card">
+              <div class="advantage-top">
+                <span class="advantage-num">{a.n}</span>
+              </div>
+              <h3 class="headline-sm">{a.title}</h3>
+              <p class="body-md">{a.desc}</p>
+              <div class="advantage-tag label-caps">{a.tag}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section class="certs">
+      <div class="container">
+        <div class="certs-head reveal">
+          <div>
+            <span class="label-caps eyebrow">Audit &amp; Accreditation</span>
+            <h3 class="headline-sm">Verified Export Standards</h3>
+          </div>
+          <p class="body-sm certs-sub">Certificate documentation and batch tracking available on request for every shipment.</p>
+        </div>
+
+        <div class="certs-grid reveal">
+          {certifications.map((c) => (
+            <div class="cert-item">
+              <span class="cert-check">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <div>
+                <p class="label-md cert-title">{c.title}</p>
+                <p class="body-sm">{c.sub}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CLOSING CTA -->
+    <section class="about-cta">
+      <div class="container about-cta-inner reveal">
+        <div class="eyebrow-row">
+          <span class="dot gold"></span>
+          <span class="label-caps eyebrow-light">Commercial Allocations</span>
+        </div>
+        <h2 class="headline-xl">Discuss export allocations or schedule a facility visit.</h2>
+        <p class="body-xl">Our Pune trade desk can put together shipping manifests, pallet configurations, and forward harvest schedules for international buyers.</p>
+        <div class="about-cta-actions">
+          <a href="/contact" class="btn btn-gold">
+            Contact Us
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="/team" class="btn btn-outline">Meet Our Team</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+
+  <style>
+    /* ---------- Page header ---------- */
+    .about-hero {
+      background: var(--color-primary);
+      color: var(--color-on-primary);
+      padding-block: 4.5rem 3.5rem;
+    }
+    @media (min-width: 1024px) { .about-hero { padding-block: 6rem 5rem; } }
+
+    .breadcrumb { display: flex; align-items: center; gap: 0.5rem; color: var(--color-tertiary-fixed); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--color-on-primary-container); }
+    .breadcrumb a:hover { color: var(--color-on-primary); }
+    .breadcrumb .sep { opacity: 0.4; }
+
+    .about-hero h1 { color: var(--color-on-primary); margin: 0 0 1rem; }
+    .about-hero-sub { color: var(--color-tertiary-fixed); max-width: 42rem; margin: 0; }
+
+    .hero-stat-bar {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.75rem;
+      margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.12);
+    }
+    @media (min-width: 768px) { .hero-stat-bar { grid-template-columns: repeat(4, 1fr); } }
+    .hero-stat .headline-xl { color: var(--color-on-primary); font-variant-numeric: tabular-nums; }
+    .hero-stat p.label-caps { color: var(--color-tertiary-fixed); margin: 0.4rem 0 0.2rem; }
+    .hero-stat p.body-sm { color: var(--color-on-primary-container); margin: 0; }
+
+    /* ---------- Shared eyebrow ---------- */
+    .eyebrow-row { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem; }
+    .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--color-tertiary-container); }
+    .dot.gold { background: var(--color-tertiary-fixed-dim); }
+    .eyebrow { color: var(--color-secondary); font-weight: 700; }
+    .eyebrow-light { color: var(--color-tertiary-fixed); font-weight: 700; }
+
+    /* ---------- Overview ---------- */
+    .overview { padding-block: 5rem; background: var(--color-surface); }
+    @media (min-width: 1024px) { .overview { padding-block: 7rem; } }
+    .overview-grid { display: grid; grid-template-columns: 1fr; gap: 2.5rem; margin-bottom: 3.5rem; }
+    @media (min-width: 1024px) { .overview-grid { grid-template-columns: 1fr 1fr; gap: 4rem; } }
+    .overview-grid h2 { color: var(--color-primary); margin: 0 0 1rem; }
+    .overview-grid p { color: var(--color-on-surface-variant); margin: 0 0 1rem; }
+    .overview-grid p:last-child { margin-bottom: 0; }
+
+    .overview-photos { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+    @media (min-width: 768px) { .overview-photos { grid-template-columns: 1fr 1fr; } }
+    .photo-card { border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--color-outline-variant); background: var(--color-surface-container-lowest); }
+    .photo-frame { aspect-ratio: 4/3; overflow: hidden; }
+    .photo-frame img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s var(--ease-standard); }
+    .photo-card:hover .photo-frame img { transform: scale(1.05); }
+    .photo-caption { padding: 1.5rem; border-top: 1px solid var(--color-outline-variant); }
+    .photo-caption h3 { color: var(--color-primary); margin: 0.4rem 0 0.5rem; }
+    .photo-caption p { color: var(--color-on-surface-variant); margin: 0; }
+
+    /* ---------- Metrics ---------- */
+    .metrics { background: var(--color-surface-container-low); padding-block: 5rem; }
+    @media (min-width: 1024px) { .metrics { padding-block: 7rem; } }
+    .metrics-head { max-width: 40rem; margin-bottom: 2.5rem; }
+    .metrics-head h2 { color: var(--color-primary); margin: 0.5rem 0 0.75rem; }
+    .metrics-head p { color: var(--color-on-surface-variant); margin: 0; }
+
+    .metrics-card {
+      background: var(--color-surface-container-lowest); border-radius: var(--radius-lg);
+      border: 1px solid var(--color-outline-variant); padding: 2rem;
+      display: flex; flex-direction: column; gap: 2.5rem;
+    }
+    @media (min-width: 768px) { .metrics-card { padding: 3rem; } }
+    .metric-top { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 0.5rem; margin-bottom: 0.75rem; }
+    .metric-top .headline-sm { color: var(--color-primary); }
+    .metric-value { color: var(--color-secondary); }
+    .metric-track { width: 100%; height: 8px; border-radius: var(--radius-full); background: var(--color-surface-container-low); overflow: hidden; }
+    .metric-fill { height: 100%; width: 0%; background: var(--color-primary-container); border-radius: var(--radius-full); transition: width 1.1s var(--ease-standard); }
+    .metric-note { color: var(--color-on-surface-variant); margin: 0.6rem 0 0; }
+
+    /* ---------- Advantages ---------- */
+    .advantages { padding-block: 5rem; }
+    @media (min-width: 1024px) { .advantages { padding-block: 7rem; } }
+    .advantages-head { display: flex; flex-direction: column; gap: 1rem; justify-content: space-between; margin-bottom: 3rem; }
+    @media (min-width: 768px) { .advantages-head { flex-direction: row; align-items: flex-end; } }
+    .advantages-head h2 { color: var(--color-primary); margin: 0.5rem 0 0; }
+    .advantages-head p { color: var(--color-on-surface-variant); max-width: 24rem; }
+
+    .advantages-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+    @media (min-width: 640px) { .advantages-grid { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 1024px) { .advantages-grid { grid-template-columns: repeat(3, 1fr); } }
+
+    .advantage-card { padding-top: 1.5rem; border-top: 1px solid var(--color-outline-variant); }
+    .advantage-num { font-family: monospace; font-size: 13px; font-weight: 700; color: var(--color-primary); letter-spacing: 0.1em; }
+    .advantage-card h3 { color: var(--color-primary); margin: 1rem 0 0.6rem; }
+    .advantage-card p { color: var(--color-on-surface-variant); margin: 0; }
+    .advantage-tag {
+      margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--color-outline-variant);
+      color: var(--color-secondary);
+    }
+
+    /* ---------- Certifications ---------- */
+    .certs { background: var(--color-surface-container-low); padding-block: 3.5rem; }
+    .certs-head { display: flex; flex-direction: column; gap: 1rem; justify-content: space-between; padding-bottom: 1.5rem; border-bottom: 1px solid var(--color-outline-variant); margin-bottom: 2rem; }
+    @media (min-width: 1024px) { .certs-head { flex-direction: row; align-items: center; } }
+    .certs-head h3 { color: var(--color-primary); margin: 0.3rem 0 0; }
+    .certs-sub { color: var(--color-on-surface-variant); max-width: 28rem; margin: 0; }
+
+    .certs-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.75rem; }
+    @media (min-width: 640px) { .certs-grid { grid-template-columns: repeat(4, 1fr); } }
+    .cert-item { display: flex; align-items: flex-start; gap: 0.75rem; }
+    .cert-check {
+      width: 22px; height: 22px; border-radius: 50%; flex-shrink: 0;
+      background: var(--color-secondary-container); color: var(--color-primary);
+      display: flex; align-items: center; justify-content: center; margin-top: 0.1rem;
+    }
+    .cert-title { color: var(--color-primary); margin: 0 0 0.1rem; }
+    .cert-item p.body-sm { color: var(--color-on-surface-variant); margin: 0; }
+
+    /* ---------- Closing CTA ---------- */
+    .about-cta { background: var(--color-primary); padding-block: 5rem; }
+    @media (min-width: 1024px) { .about-cta { padding-block: 7rem; } }
+    .about-cta-inner { max-width: 44rem; }
+    .about-cta h2 { color: var(--color-on-primary); margin: 0 0 1rem; }
+    .about-cta p { color: var(--color-tertiary-fixed); margin: 0 0 2rem; }
+    .about-cta-actions { display: flex; flex-wrap: wrap; gap: 1rem; }
+
+    .btn-gold {
+      background: var(--color-tertiary-fixed); color: var(--color-on-secondary-fixed);
+      border-radius: var(--radius-full);
+    }
+    .btn-gold:hover { background: var(--color-tertiary-fixed-dim); }
+    .about-cta .btn-outline { border-radius: var(--radius-full); }
+  </style>
+
+  <script>
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: '0px 0px -60px 0px' }
+    );
+    revealEls.forEach((el) => revealObserver.observe(el));
+
+    // Animated stat counters — count up once when scrolled into view
+    const counters = document.querySelectorAll('.stat-value');
+    const countObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const el = entry.target;
+          const target = parseInt(el.dataset.count || '0', 10);
+          const suffix = el.dataset.suffix || '';
+          const prefix = el.dataset.prefix || '';
+          const duration = 1400;
+          const start = performance.now();
+
+          const tick = (now) => {
+            const progress = Math.min((now - start) / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            const value = Math.round(target * eased);
+            el.textContent = prefix + value.toLocaleString() + suffix;
+            if (progress < 1) requestAnimationFrame(tick);
+          };
+          requestAnimationFrame(tick);
+          countObserver.unobserve(el);
+        });
+      },
+      { threshold: 0.4 }
+    );
+    counters.forEach((el) => countObserver.observe(el));
+
+    // Animate the metric bars once they scroll into view
+    const fills = document.querySelectorAll('.metric-fill');
+    const fillObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const el = entry.target;
+          const value = el.dataset.fill || '0';
+          requestAnimationFrame(() => {
+            el.style.width = value + '%';
+          });
+          fillObserver.unobserve(el);
+        });
+      },
+      { threshold: 0.3 }
+    );
+    fills.forEach((el) => fillObserver.observe(el));
+  </script>
+</body>
+</html>

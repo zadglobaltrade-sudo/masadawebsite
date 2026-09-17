@@ -1,0 +1,557 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const stats = [
+  { value: 900, suffix: '+', label: 'Farmer Cooperatives', desc: 'Directly partnered family holdings managed under strict Good Agricultural Practices.' },
+  { value: 3500, suffix: ' MT', label: 'Export Volume', desc: 'Standardized sorting across automated packhouse terminals in Pune and Solapur.' },
+  { value: 1650, suffix: '+', label: 'Reefers Dispatched', desc: 'Continuous temperature-logged maritime container transit across major routes.' },
+  { value: 200, suffix: '+', label: 'Institutional Buyers', desc: 'Wholesale markets, supermarket networks, and commodity import desks worldwide.' },
+];
+
+const pipeline = [
+  { n: '01', title: 'Tissue Culturing', tag: 'Seedbed Protocol', desc: 'Virus-indexed G9 Cavendish saplings distributed to accredited growers with agronomic oversight.' },
+  { n: '02', title: 'Precision Harvest', tag: 'Zero-Impact Harvest', desc: 'Harvesting calibrated at optimal physiological maturity using cushioned cradle carts.' },
+  { n: '03', title: 'De-Hand & Wash', tag: 'Latex Removal', desc: 'Curved-blade de-handing into potable water flumes; food-grade bio-sanitization bath.' },
+  { n: '04', title: 'Calibrated Pack', tag: 'Grade Spec', desc: 'Sorted by finger caliber and length, packed into export-grade telescopic boxes.' },
+  { n: '05', title: 'Rapid Pre-Cool', tag: 'Sub-6hr Pull Down', desc: 'Blast pre-cooling pulls pulp core temperature down fast; modified-atmosphere liners sealed.' },
+  { n: '06', title: 'Reefer Transit', tag: 'Live Telemetry', desc: 'Sealed reefer stuffing at the packhouse dock, with GPS and temperature dataloggers.' },
+];
+
+const specs = [
+  ['Variety', 'Grand Naine (G9) Cavendish'],
+  ['Calibration (Thickness)', '39mm – 46mm'],
+  ['Finger Length', 'Min 18cm – 22cm'],
+  ['Packaging Options', '13.5kg / 16.0kg Net Weight Cartons'],
+  ['Hands per Box', '4, 5, 6 Hands / Clusters Available'],
+  ['40ft Reefer Capacity', '1,540 boxes (13.5kg) / 20 Pallets'],
+];
+
+const facilities = [
+  { tag: 'Facility Tour 01', title: 'Pre-Cooling & Ethylene Scrubbing', desc: 'Temperature pull-down within hours of farmgate arrival, preventing premature ripening.' },
+  { tag: 'Facility Tour 02', title: 'Automated Grading & Packing Line', desc: 'Defect-free caliber verification, cushioning, and modified-atmosphere liner sealing.' },
+  { tag: 'Facility Tour 03', title: 'Quality Audit & Reefer Stuffing', desc: 'Direct packhouse cold-dock container stuffing with seal verification and telemetry activation.' },
+];
+---
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Masada Fruits &amp; Vegetables — Premium Banana Exporters, Pune</title>
+  <meta name="description" content="Masada Fruits and Vegetables — export-grade Cavendish bananas from Maharashtra, delivered with cold-chain precision to Oman and Afghanistan." />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
+</head>
+<body>
+  <Header />
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <div class="badge">
+            <span class="dot"></span>
+            <span class="label-caps">Global Agricultural Export · Pune, India</span>
+          </div>
+          <h1 class="display-xl">India's finest Cavendish bananas, engineered for global trade.</h1>
+          <p class="body-xl hero-desc">
+            Masada Fruits and Vegetables sources and exports premium Cavendish bananas
+            from Maharashtra's fertile belt — delivering cold-chain precision and
+            consistent quality to trusted trade partners in Oman and Afghanistan.
+          </p>
+          <div class="hero-ctas">
+            <a href="/contact#contact-form-section" class="btn btn-primary">
+              Request Export Catalog &amp; Specifications
+              <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="#pipeline" class="link-arrow">
+              Review Quality Parameters
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M6 13l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+
+          <div class="hero-metas">
+            <div>
+              <div class="label-caps meta-label">Thermal Standard</div>
+              <div class="headline-sm meta-value">13.5&deg;C Sustained</div>
+              <div class="body-sm meta-sub">Automated reefer telemetry</div>
+            </div>
+            <div>
+              <div class="label-caps meta-label">Transit Stability</div>
+              <div class="headline-sm meta-value">28&ndash;35 Days</div>
+              <div class="body-sm meta-sub">Green life duration</div>
+            </div>
+            <div>
+              <div class="label-caps meta-label">Port Clearance</div>
+              <div class="headline-sm meta-value">100% Phytosanitary</div>
+              <div class="body-sm meta-sub">APEDA Certified</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-media reveal">
+          <div class="hero-media-frame">
+            <img
+              class="kenburns"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCczIQ-UwG2yqll52yTO6ArWZdntt7_IZ7Q8a8PKigQ_mJH6u55nJ2io8TOM0uPE2EjpmBNYAuIvKMhoMGpPvmaTcSRsuQKwozuH2oCi5fZ_5t0JsUgL0ZLpAmFo8ZIF-7jw75KDkoMaRLitdjSC7Skbv3Xb_ZXzby9bkYaC-N8kF6caUOtzq45_Ohg2VGI95O84kfTfGtId98SiT-eBa9kmkeRS2gsYH8OqVaGLFRjv6fUJFvbtRpt"
+              alt="Export-grade green Cavendish banana hands, calibrated and cushioned"
+              loading="eager"
+            />
+            <div class="telemetry-card">
+              <div class="telemetry-left">
+                <span class="telemetry-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v20M4 6l16 12M20 6L4 18M2 12h20"/></svg>
+                </span>
+                <div>
+                  <div class="label-caps meta-label">Cold Chain Core</div>
+                  <div class="label-md">13.5&deg;C Controlled Reefer</div>
+                </div>
+              </div>
+              <div class="telemetry-right">
+                <span class="live-dot"></span>
+                <span class="label-caps">Active</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="label-caps eyebrow">Scale &amp; Provenance</span>
+            <h2 class="headline-lg">Engineered capacity for transcontinental demand.</h2>
+          </div>
+          <p class="body-md section-sub">
+            Continuous harvest schedules across four Indian states ensure
+            year-round availability without seasonal procurement gaps.
+          </p>
+        </div>
+
+        <div class="stats-grid reveal">
+          {stats.map((s) => (
+            <div class="stat">
+              <div class="display-xl stat-value" data-count={s.value} data-suffix={s.suffix}>0{s.suffix}</div>
+              <h3 class="headline-sm">{s.label}</h3>
+              <p class="body-sm stat-desc">{s.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- PIPELINE -->
+    <section class="pipeline" id="pipeline">
+      <div class="container">
+        <div class="pipeline-head reveal">
+          <div>
+            <span class="label-caps eyebrow">Supply Chain Integrity</span>
+            <h2 class="display-lg">Six stages of uncompromising export logistics.</h2>
+          </div>
+          <p class="body-xl pipeline-sub">
+            Every carton that leaves our packhouses represents an unbroken chain
+            of precision — from certified tissue-culture saplings to destination port discharge.
+          </p>
+        </div>
+
+        <div class="pipeline-grid reveal">
+          {pipeline.map((p) => (
+            <div class="pipeline-card">
+              <div class="pipeline-top">
+                <span class="pipeline-num">{p.n}</span>
+                <span class="pipeline-dot"></span>
+              </div>
+              <h3 class="headline-sm">{p.title}</h3>
+              <p class="body-sm">{p.desc}</p>
+              <div class="pipeline-tag label-caps">
+                <span class="pipeline-dot"></span>{p.tag}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div class="spec-block reveal">
+          <div class="spec-intro">
+            <span class="label-caps eyebrow">Institutional Grade</span>
+            <h3 class="headline-md">Export Quality Parameters</h3>
+            <p class="body-sm">Every shipment is verified against strict international import tolerances prior to container sealing.</p>
+          </div>
+          <div class="spec-table">
+            {specs.map(([label, value]) => (
+              <div class="spec-row">
+                <span class="label-caps">{label}</span>
+                <span class="body-md spec-value">{value}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FACILITIES -->
+    <section class="facilities">
+      <div class="container">
+        <div class="facilities-head reveal">
+          <span class="label-caps eyebrow">Infrastructure &amp; Pre-Cooling</span>
+          <h2 class="display-lg">State-of-the-art cold storage and export packing units.</h2>
+          <p class="body-md">Automated packing lines, blast pre-cooling chambers, and high-cube container loading facilities built to international export standards.</p>
+        </div>
+
+        <div class="facilities-grid reveal">
+          {facilities.map((f) => (
+            <div class="facility-card">
+              <div class="facility-thumb">
+                <div class="play-btn" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7-11-7Z"/></svg>
+                </div>
+              </div>
+              <div class="label-caps eyebrow">{f.tag}</div>
+              <h3 class="headline-sm">{f.title}</h3>
+              <p class="body-sm">{f.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA / INQUIRY -->
+    <section class="inquiry" id="inquiry">
+      <div class="container inquiry-grid">
+        <div class="inquiry-copy reveal">
+          <span class="label-caps eyebrow">Trade Allocation</span>
+          <h2 class="display-lg">Secure your shipment allocation for the upcoming harvest cycle.</h2>
+          <p class="body-md">
+            We partner with institutional buyers, retail distributors, and fruit
+            import syndicates. Inquire today for FOB or CIF destination-port quotations.
+          </p>
+          <ul class="inquiry-points">
+            <li><strong>Incoterms:</strong> FOB (Mumbai), CFR, CIF to designated ports worldwide.</li>
+            <li><strong>Compliance:</strong> Pre-shipment phytosanitary certificates and Certificate of Origin.</li>
+            <li><strong>Packaging:</strong> 13.5kg / 16.0kg cartons and custom export packs.</li>
+          </ul>
+        </div>
+
+        <div class="inquiry-form reveal">
+          <h3 class="headline-md">Commercial Export Desk</h3>
+          <p class="body-sm">Complete the form below — our export desk responds within 12 business hours.</p>
+          <form id="inquiry-form">
+            <div class="form-row">
+              <div class="field">
+                <label class="label-sm" for="company">Company Name</label>
+                <input id="company" name="company" type="text" placeholder="Your company" autocomplete="organization" required />
+              </div>
+              <div class="field">
+                <label class="label-sm" for="contact">Contact Name</label>
+                <input id="contact" name="contact" type="text" placeholder="Full name" autocomplete="name" required />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="field">
+                <label class="label-sm" for="email">Email Address</label>
+                <input id="email" name="email" type="email" placeholder="you@company.com" autocomplete="email" required />
+              </div>
+              <div class="field">
+                <label class="label-sm" for="port">Destination Port</label>
+                <input id="port" name="port" type="text" placeholder="e.g. Muscat" autocomplete="off" required />
+              </div>
+            </div>
+            <div class="field">
+              <label class="label-sm" for="message">Requirements</label>
+              <textarea id="message" name="message" rows="3" placeholder="Volume, timeline, or other details..."></textarea>
+            </div>
+            <div class="form-footer">
+              <button type="submit" class="btn btn-primary">
+                Submit Inquiry
+                <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <span class="body-sm">Institutional B2B inquiries only.</span>
+            </div>
+            <p class="form-success body-sm" id="inquiry-success" hidden>
+              Inquiry received — our Pune export desk will respond within 12 hours.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+
+  <style>
+    :global(body) { padding-top: 80px; }
+
+    .icon { display: inline-block; }
+
+    /* ---------- Hero ---------- */
+    .hero { padding-block: 3rem 4rem; background: var(--color-surface); overflow: hidden; }
+    @media (min-width: 1024px) { .hero { padding-block: 5rem 6rem; } }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+    @media (min-width: 1024px) {
+      .hero-grid { grid-template-columns: 7fr 5fr; }
+    }
+
+    .badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.4rem 0.9rem; border-radius: var(--radius-full);
+      background: rgba(203, 234, 216, 0.4); margin-bottom: 2rem;
+    }
+    .badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--color-tertiary-fixed-dim); }
+    .badge .label-caps { color: var(--color-on-secondary-fixed); }
+
+    .hero-copy h1 { color: var(--color-primary); margin: 0 0 1.5rem; max-width: 26ch; }
+    .hero-desc { color: var(--color-on-surface-variant); max-width: 40ch; margin: 0 0 2.5rem; }
+
+    .hero-ctas { display: flex; flex-wrap: wrap; align-items: center; gap: 1.75rem; margin-bottom: 3rem; }
+
+    .hero-metas {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+      padding-top: 2.5rem; border-top: 1px solid var(--color-outline-variant);
+    }
+    .meta-label { color: var(--color-outline); letter-spacing: 0.08em; }
+    .meta-value { color: var(--color-primary); margin-top: 0.25rem; }
+    .meta-sub { color: var(--color-on-surface-variant); margin-top: 0.2rem; }
+
+    .hero-media-frame {
+      position: relative; width: 100%; aspect-ratio: 4/5;
+      border-radius: var(--radius-lg); overflow: hidden;
+      background: var(--color-surface-container-low);
+    }
+    .hero-media-frame img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* Ken Burns: slow, subtle, CSS-only, no JS */
+    .kenburns { animation: kenburns 24s ease-in-out infinite alternate; }
+    @keyframes kenburns {
+      from { transform: scale(1) translate(0, 0); }
+      to { transform: scale(1.08) translate(-1%, -1%); }
+    }
+
+    .telemetry-card {
+      position: absolute; left: 1.25rem; right: 1.25rem; bottom: 1.25rem;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.1rem 1.25rem; border-radius: var(--radius-md);
+      background: rgba(249, 249, 255, 0.95); backdrop-filter: blur(8px);
+    }
+    .telemetry-left { display: flex; align-items: center; gap: 0.75rem; }
+    .telemetry-icon {
+      width: 38px; height: 38px; border-radius: 50%;
+      background: var(--color-secondary-container); color: var(--color-primary);
+      display: inline-flex; align-items: center; justify-content: center;
+    }
+    .telemetry-right { text-align: right; }
+    .live-dot {
+      width: 7px; height: 7px; border-radius: 50%; display: inline-block;
+      background: var(--color-tertiary-fixed-dim); margin-right: 0.35rem;
+      animation: pulse 1.8s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; } 50% { opacity: 0.35; }
+    }
+
+    /* ---------- Section shared ---------- */
+    .eyebrow { color: var(--color-secondary); font-weight: 700; }
+    .section-head {
+      display: flex; flex-direction: column; gap: 1.25rem;
+      justify-content: space-between; margin-bottom: 3.5rem;
+    }
+    @media (min-width: 768px) { .section-head { flex-direction: row; align-items: flex-end; } }
+    .section-head h2 { color: var(--color-primary); margin: 0.5rem 0 0; }
+    .section-sub { color: var(--color-on-surface-variant); max-width: 26rem; }
+
+    /* ---------- Stats ---------- */
+    .stats { background: var(--color-surface-container-low); padding-block: 4.5rem; }
+    @media (min-width: 1024px) { .stats { padding-block: 6rem; } }
+    .stats-grid { display: grid; grid-template-columns: 1fr; gap: 2.5rem; }
+    @media (min-width: 640px) { .stats-grid { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 1024px) { .stats-grid { grid-template-columns: repeat(4, 1fr); } }
+    .stat-value { color: var(--color-primary); font-variant-numeric: tabular-nums; }
+    .stat h3 { color: var(--color-primary); margin: 0.75rem 0 0.5rem; }
+    .stat-desc { color: var(--color-on-surface-variant); }
+
+    /* ---------- Pipeline ---------- */
+    .pipeline { padding-block: 5rem; }
+    @media (min-width: 1024px) { .pipeline { padding-block: 7rem; } }
+    .pipeline-head { display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-bottom: 4rem; }
+    @media (min-width: 1024px) { .pipeline-head { grid-template-columns: 5fr 7fr; } }
+    .pipeline-head h2 { color: var(--color-primary); margin: 0.75rem 0 0; }
+    .pipeline-sub { color: var(--color-on-surface-variant); align-self: end; }
+
+    .pipeline-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+    @media (min-width: 640px) { .pipeline-grid { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 1024px) { .pipeline-grid { grid-template-columns: repeat(3, 1fr); } }
+
+    .pipeline-card {
+      padding: 2rem; border-radius: var(--radius-lg);
+      background: rgba(242, 243, 251, 0.6);
+      transition: background var(--dur-fast) var(--ease-standard), transform var(--dur-fast) var(--ease-standard);
+    }
+    .pipeline-card:hover { background: var(--color-surface-container-low); transform: translateY(-3px); }
+    .pipeline-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem; }
+    .pipeline-num { font-size: 28px; font-weight: 300; color: rgba(1, 45, 29, 0.3); line-height: 1; }
+    .pipeline-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--color-secondary); display: inline-block; }
+    .pipeline-card h3 { color: var(--color-primary); margin: 0 0 0.6rem; }
+    .pipeline-card p { color: var(--color-on-surface-variant); margin: 0; }
+    .pipeline-tag {
+      display: flex; align-items: center; gap: 0.5rem; margin-top: 1.75rem;
+      padding-top: 1rem; border-top: 1px solid rgba(193, 200, 194, 0.3);
+      color: var(--color-secondary);
+    }
+
+    .spec-block {
+      margin-top: 4rem; padding: 3.5rem; border-radius: var(--radius-lg);
+      background: var(--color-primary); color: var(--color-on-primary);
+      display: grid; grid-template-columns: 1fr; gap: 2rem;
+    }
+    @media (min-width: 1024px) { .spec-block { grid-template-columns: 4fr 8fr; } }
+    .spec-intro h3 { color: var(--color-on-primary); margin: 0.5rem 0 0.75rem; }
+    .spec-intro p { color: var(--color-on-primary-container); margin: 0; }
+    .spec-intro .eyebrow { color: var(--color-tertiary-fixed); }
+    .spec-table { display: grid; grid-template-columns: 1fr; gap: 0 3rem; }
+    @media (min-width: 640px) { .spec-table { grid-template-columns: 1fr 1fr; } }
+    .spec-row {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.9rem 0; border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .spec-row .label-caps { color: var(--color-on-primary-container); }
+    .spec-value { color: var(--color-on-primary); font-weight: 500; }
+
+    /* ---------- Facilities ---------- */
+    .facilities { background: var(--color-surface-container-low); padding-block: 5rem; }
+    @media (min-width: 1024px) { .facilities { padding-block: 7rem; } }
+    .facilities-head { max-width: 42rem; margin-bottom: 3.5rem; }
+    .facilities-head h2 { color: var(--color-primary); margin: 0.5rem 0 1rem; }
+    .facilities-head p { color: var(--color-on-surface-variant); }
+    .facilities-grid { display: grid; grid-template-columns: 1fr; gap: 2.5rem; }
+    @media (min-width: 768px) { .facilities-grid { grid-template-columns: repeat(3, 1fr); } }
+
+    .facility-thumb {
+      position: relative; width: 100%; aspect-ratio: 16/10; border-radius: var(--radius-lg);
+      background: linear-gradient(135deg, var(--color-primary-container), var(--color-primary));
+      margin-bottom: 1.25rem; overflow: hidden; cursor: pointer;
+    }
+    .play-btn {
+      position: absolute; inset: 0; margin: auto; width: 56px; height: 56px;
+      border-radius: 50%; background: rgba(249, 249, 255, 0.92); color: var(--color-primary);
+      display: flex; align-items: center; justify-content: center;
+      transition: transform var(--dur-fast) var(--ease-standard);
+    }
+    .facility-card:hover .play-btn { transform: scale(1.1); }
+    .facility-card h3 { color: var(--color-primary); margin: 0.5rem 0 0.5rem; }
+    .facility-card p { color: var(--color-on-surface-variant); margin: 0; }
+
+    /* ---------- Inquiry ---------- */
+    .inquiry { background: var(--color-surface-container-high); padding-block: 5rem; }
+    @media (min-width: 1024px) { .inquiry { padding-block: 7rem; } }
+    .inquiry-grid { display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: start; }
+    @media (min-width: 1024px) { .inquiry-grid { grid-template-columns: 5fr 7fr; } }
+
+    .inquiry-copy h2 { color: var(--color-primary); margin: 0.5rem 0 1rem; }
+    .inquiry-copy p { color: var(--color-on-surface-variant); margin: 0 0 1.5rem; }
+    .inquiry-points { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.9rem; }
+    .inquiry-points li { color: var(--color-on-surface-variant); font-size: 14px; padding-left: 1.5rem; position: relative; }
+    .inquiry-points li::before {
+      content: ''; position: absolute; left: 0; top: 0.4em; width: 8px; height: 8px;
+      border-radius: 50%; background: var(--color-secondary-container); border: 1.5px solid var(--color-secondary);
+    }
+    .inquiry-points strong { color: var(--color-primary); }
+
+    .inquiry-form {
+      background: var(--color-surface-container-lowest); border-radius: var(--radius-lg);
+      padding: 2rem; box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    }
+    @media (min-width: 1024px) { .inquiry-form { padding: 3rem; } }
+    .inquiry-form h3 { color: var(--color-primary); margin: 0 0 0.5rem; }
+    .inquiry-form > p { color: var(--color-on-surface-variant); margin: 0 0 2rem; }
+
+    .form-row { display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-bottom: 1.5rem; }
+    @media (min-width: 640px) { .form-row { grid-template-columns: 1fr 1fr; } }
+    .field label { display: block; color: var(--color-primary); margin-bottom: 0.5rem; }
+    .field { margin-bottom: 1.5rem; }
+    .form-row .field { margin-bottom: 0; }
+    .field input, .field textarea {
+      width: 100%; padding: 0.75rem 1rem; border-radius: var(--radius-md);
+      border: 1px solid transparent; background: var(--color-surface-container-low);
+      color: var(--color-on-surface); font-size: 14px; resize: none;
+      transition: background var(--dur-fast) var(--ease-standard), box-shadow var(--dur-fast) var(--ease-standard);
+    }
+    .field input:focus, .field textarea:focus {
+      outline: none; background: var(--color-surface-container-lowest);
+      box-shadow: 0 0 0 2px var(--color-secondary-container);
+    }
+
+    .form-footer {
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+      gap: 1rem; padding-top: 0.5rem;
+    }
+    .form-footer .body-sm { color: var(--color-on-surface-variant); }
+    .form-success {
+      margin-top: 1.25rem; padding: 0.9rem 1rem; border-radius: var(--radius-md);
+      background: var(--color-secondary-container); color: var(--color-on-secondary-fixed);
+    }
+  </style>
+
+  <script>
+    // Scroll-reveal: one IntersectionObserver shared by every .reveal element
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: '0px 0px -60px 0px' }
+    );
+    revealEls.forEach((el) => revealObserver.observe(el));
+
+    // Animated stat counters — count up once when scrolled into view
+    const counters = document.querySelectorAll('.stat-value');
+    const countObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const el = entry.target;
+          const target = parseInt(el.dataset.count || '0', 10);
+          const suffix = el.dataset.suffix || '';
+          const duration = 1400;
+          const start = performance.now();
+
+          const tick = (now) => {
+            const progress = Math.min((now - start) / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            const value = Math.round(target * eased);
+            el.textContent = value.toLocaleString() + suffix;
+            if (progress < 1) requestAnimationFrame(tick);
+          };
+          requestAnimationFrame(tick);
+          countObserver.unobserve(el);
+        });
+      },
+      { threshold: 0.4 }
+    );
+    counters.forEach((el) => countObserver.observe(el));
+
+    // Inquiry form: placeholder submit handler (wire up to your backend/email service)
+    const form = document.getElementById('inquiry-form');
+    const success = document.getElementById('inquiry-success');
+    form?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      success?.removeAttribute('hidden');
+    });
+  </script>
+</body>
+</html>

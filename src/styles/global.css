@@ -1,0 +1,215 @@
+/* ==========================================================================
+   Masada Fruits & Vegetables — Global Design Tokens
+   Ported from the approved Stitch design. Plain CSS (no Tailwind needed) so
+   this drops into any Astro project as-is.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+
+:root {
+  /* Color tokens (from the approved Stitch palette) */
+  --color-primary: #012d1d;
+  --color-primary-container: #1b4332;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #86af99;
+
+  --color-secondary: #496457;
+  --color-secondary-container: #cbead8;
+  --color-on-secondary-fixed: #052016;
+
+  --color-tertiary: #755b00;
+  --color-tertiary-container: #d2a500;
+  --color-tertiary-fixed: #ffdf90;
+  --color-tertiary-fixed-dim: #f0c12c;
+
+  --color-surface: #f9f9ff;
+  --color-surface-container-low: #f2f3fb;
+  --color-surface-container-high: #e6e8f0;
+  --color-surface-container-lowest: #ffffff;
+
+  --color-on-surface: #191c21;
+  --color-on-surface-variant: #414844;
+  --color-outline: #717973;
+  --color-outline-variant: #c1c8c2;
+
+  --color-error: #ba1a1a;
+
+  /* Layout */
+  --container-max: 1440px;
+  --pad-mobile: 1.5rem;
+  --pad-desktop: 6rem;
+  --gutter: 2.5rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-full: 999px;
+
+  /* Motion */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --dur-fast: 200ms;
+  --dur-med: 400ms;
+  --dur-slow: 900ms;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--color-surface);
+  color: var(--color-on-surface);
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  line-height: 26px;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+}
+
+.container {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--pad-mobile);
+}
+@media (min-width: 1024px) {
+  .container { padding-inline: var(--pad-desktop); }
+}
+
+/* ---------- Type scale ---------- */
+.display-xl {
+  font-size: 40px; line-height: 46px; letter-spacing: -0.025em; font-weight: 600;
+}
+@media (min-width: 1024px) {
+  .display-xl { font-size: 72px; line-height: 80px; letter-spacing: -0.03em; }
+}
+.display-lg {
+  font-size: 32px; line-height: 38px; letter-spacing: -0.02em; font-weight: 600;
+}
+@media (min-width: 1024px) {
+  .display-lg { font-size: 56px; line-height: 64px; letter-spacing: -0.025em; }
+}
+.headline-xl { font-size: 28px; line-height: 34px; letter-spacing: -0.015em; font-weight: 500; }
+@media (min-width: 1024px) {
+  .headline-xl { font-size: 40px; line-height: 48px; letter-spacing: -0.02em; }
+}
+.headline-lg { font-size: 26px; line-height: 32px; letter-spacing: -0.015em; font-weight: 500; }
+@media (min-width: 1024px) {
+  .headline-lg { font-size: 32px; line-height: 40px; }
+}
+.headline-md { font-size: 22px; line-height: 28px; letter-spacing: -0.01em; font-weight: 500; }
+@media (min-width: 1024px) {
+  .headline-md { font-size: 24px; line-height: 32px; }
+}
+.headline-sm { font-size: 18px; line-height: 25px; letter-spacing: -0.005em; font-weight: 600; }
+@media (min-width: 1024px) {
+  .headline-sm { font-size: 20px; line-height: 28px; }
+}
+.body-xl { font-size: 17px; line-height: 27px; font-weight: 400; }
+@media (min-width: 1024px) {
+  .body-xl { font-size: 18px; line-height: 30px; letter-spacing: -0.005em; }
+}
+.body-md { font-size: 16px; line-height: 26px; }
+.body-sm { font-size: 14px; line-height: 22px; }
+.label-md { font-size: 14px; line-height: 20px; font-weight: 500; }
+.label-sm { font-size: 12px; line-height: 16px; font-weight: 500; }
+.label-caps {
+  font-size: 11px; line-height: 16px; letter-spacing: 0.1em;
+  font-weight: 700; text-transform: uppercase;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 48px;
+  padding-inline: 1.75rem;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  border: none;
+  cursor: pointer;
+  transition: background var(--dur-fast) var(--ease-standard),
+              transform var(--dur-fast) var(--ease-standard),
+              box-shadow var(--dur-fast) var(--ease-standard);
+}
+.btn:active { transform: translateY(1px); }
+
+.btn-primary {
+  background: var(--color-primary-container);
+  color: var(--color-on-primary);
+}
+.btn-primary:hover {
+  background: var(--color-primary);
+  box-shadow: 0 4px 14px rgba(1, 45, 29, 0.25);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-on-primary);
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
+}
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.9);
+}
+
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-primary);
+  font-size: 14px;
+  font-weight: 500;
+}
+.link-arrow svg { transition: transform var(--dur-fast) var(--ease-standard); }
+.link-arrow:hover { color: var(--color-secondary); }
+.link-arrow:hover svg { transform: translateX(3px); }
+
+/* ---------- Motion: scroll reveal ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity var(--dur-slow) var(--ease-standard),
+              transform var(--dur-slow) var(--ease-standard);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Icon sizing default */
+.icon { display: inline-block; flex-shrink: 0; }
