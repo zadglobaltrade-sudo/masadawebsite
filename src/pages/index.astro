@@ -61,7 +61,7 @@ const facilities = [
           <p class="body-xl hero-desc">
             Masada Fruits and Vegetables sources and exports premium Cavendish bananas
             from Maharashtra's fertile belt — delivering cold-chain precision and
-            consistent quality to trusted trade partners in Oman and Afghanistan.
+            consistent quality to trusted trade partners around the globe.
           </p>
           <div class="hero-ctas">
             <a href="/contact#contact-form-section" class="btn btn-primary">
@@ -241,15 +241,16 @@ const facilities = [
         <div class="inquiry-form reveal">
           <h3 class="headline-md">Commercial Export Desk</h3>
           <p class="body-sm">Complete the form below — our export desk responds within 12 business hours.</p>
-          <form id="inquiry-form">
+          <form id="inquiry-form" data-netlify="true" name="export-inquiry">
+            <input type="hidden" name="form-name" value="export-inquiry" />
             <div class="form-row">
               <div class="field">
                 <label class="label-sm" for="company">Company Name</label>
                 <input id="company" name="company" type="text" placeholder="Your company" autocomplete="organization" required />
               </div>
               <div class="field">
-                <label class="label-sm" for="contact">Contact Name</label>
-                <input id="contact" name="contact" type="text" placeholder="Full name" autocomplete="name" required />
+                <label class="label-sm" for="name">Contact Name</label>
+                <input id="name" name="name" type="text" placeholder="Full name" autocomplete="name" required />
               </div>
             </div>
             <div class="form-row">
@@ -545,12 +546,16 @@ const facilities = [
     );
     counters.forEach((el) => countObserver.observe(el));
 
-    // Inquiry form: placeholder submit handler (wire up to your backend/email service)
+    // Inquiry form: Netlify will handle submission
     const form = document.getElementById('inquiry-form');
     const success = document.getElementById('inquiry-success');
-    form?.addEventListener('submit', (e) => {
-      e.preventDefault();
-      success?.removeAttribute('hidden');
+    form?.addEventListener('submit', () => {
+      // Form will submit to Netlify automatically
+      // Show success message after brief delay for UX
+      setTimeout(() => {
+        success?.removeAttribute('hidden');
+        form.reset();
+      }, 500);
     });
   </script>
 </body>

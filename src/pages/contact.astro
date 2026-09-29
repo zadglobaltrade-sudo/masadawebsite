@@ -101,7 +101,8 @@ const contactInfo = [
             </p>
           </div>
 
-          <form id="contact-form">
+          <form id="contact-form" data-netlify="true" name="contact">
+            <input type="hidden" name="form-name" value="contact" />
             <div class="form-row">
               <div class="field">
                 <label class="label-sm" for="name">Full Name</label>
@@ -304,13 +305,16 @@ const contactInfo = [
       }
     }
 
-    // Contact form: placeholder submit handler
+    // Contact form: Netlify will handle submission
     const form = document.getElementById('contact-form') as HTMLFormElement;
     const success = document.getElementById('contact-success');
-    form?.addEventListener('submit', (e) => {
-      e.preventDefault();
-      success?.removeAttribute('hidden');
-      form.reset();
+    form?.addEventListener('submit', () => {
+      // Form will submit to Netlify automatically
+      // Show success message after brief delay for UX
+      setTimeout(() => {
+        success?.removeAttribute('hidden');
+        form.reset();
+      }, 500);
     });
   </script>
 </body>
