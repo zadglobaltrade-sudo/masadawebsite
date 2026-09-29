@@ -101,7 +101,7 @@ const contactInfo = [
             </p>
           </div>
 
-          <form id="contact-form" data-netlify="true" name="contact">
+          <form id="contact-form" data-netlify="true" name="contact" method="POST">
             <input type="hidden" name="form-name" value="contact" />
             <div class="form-row">
               <div class="field">
@@ -305,16 +305,32 @@ const contactInfo = [
       }
     }
 
-    // Contact form: Netlify will handle submission
+    // Contact form: AJAX submission to Netlify
     const form = document.getElementById('contact-form') as HTMLFormElement;
     const success = document.getElementById('contact-success');
-    form?.addEventListener('submit', () => {
-      // Form will submit to Netlify automatically
-      // Show success message after brief delay for UX
-      setTimeout(() => {
+    form?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const formData = new FormData(form);
+      
+      try {
+        await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(formData as any).toString()
+        });
+        
         success?.removeAttribute('hidden');
         form.reset();
-      }, 500);
+        
+        // Hide success message after 5 seconds
+        setTimeout(() => {
+          success?.setAttribute('hidden', '');
+        }, 5000);
+      } catch (error) {
+        console.error('Form submission error:', error);
+        alert('There was an error submitting the form. Please try again.');
+      }
     });
   </script>
 </body>

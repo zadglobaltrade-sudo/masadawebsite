@@ -241,7 +241,7 @@ const facilities = [
         <div class="inquiry-form reveal">
           <h3 class="headline-md">Commercial Export Desk</h3>
           <p class="body-sm">Complete the form below — our export desk responds within 12 business hours.</p>
-          <form id="inquiry-form" data-netlify="true" name="export-inquiry">
+          <form id="inquiry-form" data-netlify="true" name="export-inquiry" method="POST">
             <input type="hidden" name="form-name" value="export-inquiry" />
             <div class="form-row">
               <div class="field">
@@ -546,16 +546,32 @@ const facilities = [
     );
     counters.forEach((el) => countObserver.observe(el));
 
-    // Inquiry form: Netlify will handle submission
+    // Inquiry form: AJAX submission to Netlify
     const form = document.getElementById('inquiry-form');
     const success = document.getElementById('inquiry-success');
-    form?.addEventListener('submit', () => {
-      // Form will submit to Netlify automatically
-      // Show success message after brief delay for UX
-      setTimeout(() => {
+    form?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const formData = new FormData(form);
+      
+      try {
+        await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(formData as any).toString()
+        });
+        
         success?.removeAttribute('hidden');
         form.reset();
-      }, 500);
+        
+        // Hide success message after 5 seconds
+        setTimeout(() => {
+          success?.setAttribute('hidden', '');
+        }, 5000);
+      } catch (error) {
+        console.error('Form submission error:', error);
+        alert('There was an error submitting the form. Please try again.');
+      }
     });
   </script>
 </body>
